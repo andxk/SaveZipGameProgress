@@ -5,7 +5,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 public class Main {
-    public static final String defPath = "D://GamesJava//savegames//";
+    public static final String DEF_PATH = "D://GamesJava//savegames//";
 
     public static void saveGame(GameProgress gp, String path) {
         try (FileOutputStream fos = new FileOutputStream(path);
@@ -18,7 +18,7 @@ public class Main {
 
 
     public static String getSavePath(int n) {
-        return defPath + "save" + n + ".dat";
+        return DEF_PATH + "save" + n + ".dat";
     }
 
 
@@ -78,7 +78,7 @@ public class Main {
             savedNames.add(getSavePath(i));
         }
 
-        String zipFileName = defPath + "saved.zip";
+        String zipFileName = DEF_PATH + "saved.zip";
         zipFiles(zipFileName, savedNames);
 
         if (new File(zipFileName).exists()) {
